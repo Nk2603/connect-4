@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cover-page{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(0, 34, 48);
+    overflow: hidden;
+}
+
+.text{
+    padding: 20px;
+    position: relative;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text::after{
+    content: "";
+    position: absolute;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    background-color:rgb(250, 18, 161);
+    top: 0;
+    left: 0;
+}
+.text::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background:linear-gradient(45deg,yellow,white,hotpink,rgb(148, 234, 148),rgb(2, 148, 252),rgb(245, 73, 73));
+    animation: colorchange 4s linear infinite;
+    filter: blur(100px);
+}
+@keyframes colorchange {
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+.text h1{
+    font-size: 5rem;
+    color: azure;
+    z-index: 10;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.start-box{
+    width: 500px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-box span:nth-child(1){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right,transparent,rgb(177, 224, 242));
+    animation: animateone 2s linear infinite;
+}
+@keyframes animateone {
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+.start-box span:nth-child(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(to bottom,transparent,rgb(177, 224, 242));
+    animation: animatetwo 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes animatetwo {
+    0%{
+        top: -100%;
+    }
+    100%{
+        top: 100%;
+    }
+}
+
+.start-box span:nth-child(3){
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to left,transparent,rgb(177, 224, 242));
+    animation: animatethree 2s linear infinite;
+    animation-delay: 2s;
+}
+@keyframes animatethree {
+    0%{
+        right: -100%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+
+.start-box span:nth-child(4){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(to top,transparent,rgb(177, 224, 242));
+    animation: animatefour 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes animatefour {
+    0%{
+        bottom: -100%;
+    }
+    100%{
+        bottom: 100%;
+    }
+}
+.border-animation{
+    width: 400px;
+    height: 200px;
+    position: relative;
+    background-color:darkcyan;
+    overflow: hidden;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  
+}
+.border-animation::before{
+    content: "";
+    position: absolute;
+    left: 25%;
+    background: rgb(251, 255, 255);
+    width:200px;
+    height: 100px;
+    z-index: -1;
+    animation: border 2s linear infinite;
+}
+.border-animation::after{
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: darkcyan;
+    width: calc(100%-20px);
+    height: calc(100%-20px);
+    z-index: -1;
+}
+
+.start-game{
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    background-color:red;
+    color: aliceblue;
+    z-index: 10;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition:.3s ;
+}
+.start-game:hover{
+   background-color: rgb(111, 223, 182);
+   color:whitesmoke;
+}
+@media screen and (max-width:900px){
+    .text h1{
+        font-size: 2rem;
+    }
+}
